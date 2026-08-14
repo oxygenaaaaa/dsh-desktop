@@ -1,0 +1,62 @@
+/*
+ * dsh-desktop Codex skin (M2)
+ *
+ * Injected via webContents.insertCSS on every did-finish-load. Reskins DSH's
+ * dark theme with an OpenAI-Codex-like zinc palette by remapping the design
+ * tokens the frontend derives every color from (--dsw-static-*). No DSH source
+ * touched. `!important` makes ordering vs. the app's runtime styles irrelevant.
+ */
+
+body[data-ds-dark-theme] {
+  /* ---- zinc ramp (Tailwind zinc, tuned) replacing bluish-neutral ---- */
+  --dsw-static-neutral-bluish-1000: rgb(9, 9, 11) !important;    /* deepest / text-on-accent */
+  --dsw-static-neutral-bluish-950:  rgb(12, 12, 14) !important;
+  --dsw-static-neutral-bluish-900:  rgb(20, 20, 23) !important;  /* base background */
+  --dsw-static-neutral-bluish-875:  rgb(24, 24, 27) !important;  /* layer-1 */
+  --dsw-static-neutral-bluish-850:  rgb(28, 28, 32) !important;  /* layer-2 / inputs */
+  --dsw-static-neutral-bluish-800:  rgb(38, 38, 42) !important;  /* layer-3 / hover solid */
+  --dsw-static-neutral-bluish-750:  rgb(48, 48, 54) !important;  /* ghost active / overlay */
+  --dsw-static-neutral-bluish-700:  rgb(63, 63, 70) !important;  /* secondary text */
+  --dsw-static-neutral-bluish-600:  rgb(82, 82, 91) !important;  /* tertiary / captions */
+  --dsw-static-neutral-bluish-500:  rgb(113, 113, 122) !important;
+  --dsw-static-neutral-bluish-400:  rgb(161, 161, 170) !important;
+  --dsw-static-neutral-bluish-300:  rgb(212, 212, 216) !important;
+  --dsw-static-neutral-bluish-200:  rgb(228, 228, 231) !important;
+  --dsw-static-neutral-bluish-100:  rgb(244, 244, 245) !important; /* primary text */
+  --dsw-static-neutral-bluish-75:   rgb(246, 246, 247) !important;
+  --dsw-static-neutral-bluish-60:   rgb(250, 250, 250) !important;
+  --dsw-static-neutral-bluish-50:   rgb(250, 250, 250) !important; /* brand / on-accent */
+  --dsw-static-neutral-bluish-00:   rgb(255, 255, 255) !important;
+
+  /* ---- restrained cool accent (was DeepSeek blue) ---- */
+  --dsw-static-deepseek-50:  rgb(20, 24, 46) !important;
+  --dsw-static-deepseek-100: rgb(30, 36, 68) !important;
+  --dsw-static-deepseek-200: rgb(42, 52, 102) !important;
+  --dsw-static-deepseek-300: rgb(74, 96, 168) !important;
+  --dsw-static-deepseek-400: rgb(110, 138, 255) !important;
+  --dsw-static-deepseek-450: rgb(94, 122, 250) !important;
+  --dsw-static-deepseek-500: rgb(79, 105, 236) !important;
+  --dsw-static-deepseek-600: rgb(66, 88, 200) !important;
+  --dsw-static-deepseek-800: rgb(44, 56, 110) !important;
+  --dsw-static-deepseek-900: rgb(33, 42, 82) !important;
+
+  /* ---- scrollbars: neutral zinc ---- */
+  --dsw-static-neutral-550: rgb(113, 113, 122) !important;
+  --dsw-static-neutral-600: rgb(82, 82, 91) !important;
+  --dsw-static-neutral-700: rgb(63, 63, 70) !important;
+
+  /* ---- derived alias tweaks (dark only) ---- */
+  --dsw-alias-border-l1: rgba(255, 255, 255, 0.07) !important;
+  --dsw-alias-border-l2: rgba(255, 255, 255, 0.1) !important;
+  --dsw-alias-interactive-bg-hover: rgba(255, 255, 255, 0.06) !important;
+  --dsw-alias-interactive-bg-active: rgba(255, 255, 255, 0.12) !important;
+  --dsw-alias-interactive-bg-hover-accent: rgba(110, 138, 255, 0.18) !important;
+  --dsw-alias-bg-skeleton: rgba(255, 255, 255, 0.06) !important;
+  --dsw-alias-bg-mask-drop: rgba(24, 24, 27, 0.7) !important;
+}
+
+/* Window-level background so no white flash before React mounts. */
+html,
+body {
+  background-color: rgb(20, 20, 23) !important;
+}
