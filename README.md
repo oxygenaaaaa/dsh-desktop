@@ -1,6 +1,6 @@
 # DSH Desktop
 
-基于 **DeepSeek Harness**（DSH）打造的 Windows 桌面客户端：深色现代界面、系统托盘、自包含后端，无需安装 Node.js，安装即用。
+**由 DeepSeek 打造** —— 基于 DeepSeek Harness（DSH）的 Windows 桌面客户端：深色现代界面、系统托盘、自包含后端，无需安装 Node.js，安装即用。
 
 ## 功能
 
@@ -31,3 +31,7 @@ npm run dist    # 打包安装器（输出到 dist\）
 ## 许可
 
 MIT
+
+---
+
+**Built with DeepSeek** 🐳
