@@ -1,10 +1,10 @@
 # DSH Desktop
 
-将 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)（DSH）封装为 Windows 桌面应用的 Electron 壳：Codex 风格的暗色界面、系统托盘、自包含后端，端用户无需安装 Node.js 即可使用。
+将 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)（DSH）封装为 Windows 桌面应用的 Electron 壳：深色现代界面、系统托盘、自包含后端，端用户无需安装 Node.js 即可使用。
 
 ## 功能特性
 
-- **Codex 风格暗色界面**：zinc 色板设计令牌重映射，不修改任何 DSH 源码
+- **深色现代界面**：zinc 色板设计令牌重映射，不修改任何 DSH 源码
 - **系统托盘**：关闭窗口最小化到托盘，托盘菜单支持「打开 / 退出」，黑色大鲸鱼图标
 - **自包含**：安装包捆绑完整 DSH 后端与全部依赖，开箱即用，无需安装 Node.js 或 Web DSH
 - **数据随安装目录**：会话、设置、凭据全部保存在应用目录 `data\` 下，卸载即清空、拷贝即便携
@@ -62,7 +62,7 @@ $env:ELECTRON_BUILDER_BINARIES_MIRROR = "https://npmmirror.com/mirrors/electron-
 
 ```
 src/main.js            主进程（后端启动、皮肤注入、托盘、截图/E2E 自验证）
-src/theme-codex.css    Codex 风格皮肤（zinc 色板）
+src/theme-codex.css    暗色皮肤（zinc 色板）
 src/preload.js         preload 缝隙（预留）
 assets/                应用图标（鲸鱼）
 scripts/stage-dsh.ps1  打包前暂存 dsh 依赖（electron-builder 会丢弃根级 node_modules）
